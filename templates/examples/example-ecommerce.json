@@ -1,0 +1,153 @@
+{
+  "project_slug": "world-class-ecommerce",
+  "created_at": "2025-01-22T15:30:00Z",
+  "created_by": "Template Example",
+  "status_flags": {
+    "is_filled": true,
+    "is_validated": true,
+    "is_whimsical_ready": true
+  },
+  "meta": {
+    "unique_id": "DB/IMO/COMMERCE/PROC-20250122-153000-WCE1",
+    "process_id": "IMO-world-class-ecommerce-001",
+    "blueprint_version_hash": "sha256:a1b2c3d4e5f67890",
+    "doctrine": ["BARTON", "ORBT", "HEIR", "STAMPED/SPVPET/STACKED"]
+  },
+  "altitudes": {
+    "30000": {
+      "project_name": "World-Class E-commerce Platform",
+      "objective": "Build a scalable, modern e-commerce platform that handles 100k+ concurrent users with AI-powered recommendations",
+      "success_criteria": [
+        "Achieve 99.9% uptime SLA",
+        "Handle 100,000+ concurrent users",
+        "Process 10,000+ transactions per minute",
+        "Deploy MVP in 8 weeks"
+      ],
+      "stakeholders": [
+        "Product Manager",
+        "Engineering Lead",
+        "UI/UX Designer",
+        "DevOps Engineer"
+      ]
+    },
+    "20000": {
+      "components": [
+        "Next.js Frontend with Tailwind",
+        "Node.js API Server",
+        "PostgreSQL Database",
+        "Redis Cache Layer",
+        "Stripe Payment Processing"
+      ],
+      "roles": [
+        "Frontend Developer",
+        "Backend Developer",
+        "DevOps Engineer",
+        "QA Engineer"
+      ],
+      "stages": [
+        "Planning & Design",
+        "Core Development", 
+        "Integration Testing",
+        "Production Deployment"
+      ],
+      "inputs": [
+        "Business requirements",
+        "UI/UX mockups",
+        "API specifications"
+      ],
+      "outputs": [
+        "Deployed platform",
+        "API documentation", 
+        "User guides"
+      ]
+    },
+    "10000": {
+      "steps": [
+        "Set up development environment",
+        "Create database schema",
+        "Build authentication system",
+        "Implement product catalog",
+        "Add payment processing"
+      ],
+      "apis_services": [
+        "Stripe Payment API",
+        "SendGrid Email Service",
+        "AWS S3 Storage API"
+      ],
+      "decision_points": [
+        "PostgreSQL vs MongoDB",
+        "Microservices vs monolithic",
+        "Self-hosted vs managed services"
+      ],
+      "llms": [
+        "Claude for code review",
+        "GPT-4 for documentation"
+      ],
+      "compliance": [
+        "PCI DSS for payments",
+        "GDPR for EU users"
+      ]
+    },
+    "5000": {
+      "documentation_plan": [
+        "API documentation",
+        "User guides",
+        "Deployment runbooks"
+      ],
+      "agent_roles": {
+        "claude": "Code review and optimization",
+        "project_gpt": "Project coordination",
+        "whimsical_gpt": "Diagram generation",
+        "sidecar": "Performance monitoring",
+        "heir": "Compliance validation"
+      },
+      "handoffs": [
+        "Design → Frontend: Mockups approved",
+        "Frontend → Backend: API contracts defined", 
+        "QA → DevOps: Tests passing"
+      ],
+      "firebreak_queue": {
+        "location": "GitHub Issues with 'P0-Critical' label",
+        "policy": "Address within 2 hours"
+      }
+    }
+  },
+  "trunk_root": {
+    "doctrine_foundation": ["BARTON", "ORBT"],
+    "schema_enforcement": [
+      "STAMPED (Neon) - User data",
+      "SPVPET (Firebase) - Analytics",
+      "STACKED (BigQuery) - Reports"
+    ],
+    "telemetry": {
+      "emit_at_every_stage": true,
+      "sink": ["Sidecar → Neon", "Sidecar → Firebase"]
+    }
+  },
+  "whimsical_outputs": {
+    "generate_mind_map": true,
+    "generate_flowchart": true,
+    "generate_agent_map": true,
+    "generate_sequence_diagram": true
+  },
+  "handoff_to_whimsical": true,
+  "notion_links": {
+    "project_page": "https://notion.so/ecommerce-project",
+    "backlog_board": "https://notion.so/ecommerce-backlog",
+    "diagrams_doc": "https://notion.so/ecommerce-diagrams"
+  },
+  "visual_embedding": {
+    "iframe_target": "https://ecommerce-platform.vercel.app/embed",
+    "preferred_height_px": 800,
+    "whimsical_diagram_ids": [
+      "system-architecture-001",
+      "user-journey-map-002"
+    ]
+  },
+  "diagram_trace_tags": [
+    "ecommerce",
+    "nextjs",
+    "payments",
+    "scalability"
+  ]
+}

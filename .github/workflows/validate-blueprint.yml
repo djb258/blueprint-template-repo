@@ -1,0 +1,39 @@
+name: Validate Blueprint
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Validate blueprint
+      run: npm run validate
+      
+    - name: Check completeness
+      run: npm run check-completeness
+      
+    - name: Export for Whimsical (if ready)
+      run: |
+        if npm run export-whimsical; then
+          echo "✅ Blueprint is ready for Whimsical GPT!"
+        else
+          echo "⚠️ Blueprint needs more completion before Whimsical export"
+        fi
+      continue-on-error: true
