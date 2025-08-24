@@ -22,15 +22,15 @@
     "check-completeness": "tsx scripts/validate.ts blueprint.json --completeness-only",
     "generate-example": "cp templates/examples/ecommerce-blueprint.json my-project-blueprint.json",
     "export-whimsical": "tsx scripts/export-whimsical.ts blueprint.json",
+    "generate-ctb": "tsx scripts/ctb-builder.ts blueprint.json",
+    "generate-ctb-with-agents": "tsx scripts/ctb-builder.ts blueprint.json ctb-output.json garage-mcp",
     "setup": "npm install && npm run validate"
   },
-  "dependencies": {
-    "zod": "^3.22.0"
-  },
   "devDependencies": {
-    "tsx": "^4.0.0",
-    "typescript": "^5.0.0",
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.19.11",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "zod": "^4.1.1"
   },
   "engines": {
     "node": ">=18.0.0"

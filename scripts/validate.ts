@@ -4,6 +4,7 @@ import { z } from 'zod'
 import fs from 'fs'
 import path from 'path'
 import { createHash } from 'crypto'
+import { CTBBuilder } from './ctb-builder'
 
 // Blueprint schema validation
 const BlueprintSchema = z.object({
@@ -104,6 +105,8 @@ interface ValidationResult {
   warnings: string[]
   completeness: number
   suggestions: string[]
+  ctb_ready?: boolean
+  ctb_preview?: string
 }
 
 class BlueprintValidator {
@@ -139,7 +142,7 @@ class BlueprintValidator {
       const schemaResult = BlueprintSchema.safeParse(blueprint)
       
       if (!schemaResult.success) {
-        schemaResult.error.errors.forEach(error => {
+        schemaResult.error.errors?.forEach(error => {
           result.errors.push(`${error.path.join('.')}: ${error.message}`)
         })
       }
@@ -162,6 +165,25 @@ class BlueprintValidator {
         // Update validation status
         blueprint.status_flags.is_validated = true
         blueprint.status_flags.is_whimsical_ready = result.completeness >= 80
+        
+        // Generate CTB preview if completeness >= 60%
+        if (result.completeness >= 60) {
+          try {
+            const ctbBuilder = new CTBBuilder()
+            const ctbBlueprint = ctbBuilder.convertIMOToCTB(blueprint)
+            const ctbResult = ctbBuilder.renderCTB(ctbBlueprint, "normal")
+            
+            result.ctb_ready = true
+            result.ctb_preview = ctbResult.diagram
+            
+            // Add CTB suggestion
+            if (result.completeness >= 80) {
+              result.suggestions.push("🎄 Your blueprint is CTB-ready! Run 'npm run generate-ctb' to create Christmas Tree visualization")
+            }
+          } catch (ctbError) {
+            result.warnings.push(`CTB generation failed: ${ctbError}`)
+          }
+        }
         
         // Write back the updated blueprint
         fs.writeFileSync(filePath, JSON.stringify(blueprint, null, 2))
@@ -331,18 +353,28 @@ class BlueprintValidator {
       result.suggestions.forEach(suggestion => console.log(`   • ${suggestion}`))
     }
     
+    // CTB Preview
+    if (result.ctb_ready && result.ctb_preview) {
+      console.log(`\n🎄 CTB Preview:`)
+      console.log(result.ctb_preview)
+    }
+    
     // Next steps
     console.log(`\n🚀 Next Steps:`)
     if (!result.isValid) {
       console.log(`   • Fix the errors listed above`)
-      console.log(`   • Run validation again: npm run factory:validate-blueprint ${path.basename(filePath)}`)
+      console.log(`   • Run validation again: npm run validate`)
     } else if (result.completeness < 80) {
       console.log(`   • Continue filling out the blueprint to reach 80% completion`)
       console.log(`   • Focus on the suggestions above`)
+      if (result.ctb_ready) {
+        console.log(`   • 🎄 Generate CTB visualization: npm run generate-ctb`)
+      }
     } else {
       console.log(`   • ✅ Blueprint is ready for Whimsical GPT!`)
       console.log(`   • Copy the JSON content and submit to Whimsical GPT`)
       console.log(`   • You'll receive mind maps, flowcharts, and diagrams`)
+      console.log(`   • 🎄 Generate CTB visualization: npm run generate-ctb`)
     }
     
     console.log(`\n${'='.repeat(60)}`)
