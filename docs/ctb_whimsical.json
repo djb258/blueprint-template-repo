@@ -1,0 +1,308 @@
+{
+  "version": "1.0",
+  "type": "flowchart",
+  "theme": "ctb-doctrine",
+  "layout": "hierarchical",
+  "metadata": {
+    "title": "CTB Doctrine Blueprint",
+    "description": "Christmas Tree Backbone with HEIR/IMO/ORBT/CARB doctrine",
+    "generated_from": "ctb_blueprint.yaml",
+    "last_sync": "2025-08-26T00:00:00Z"
+  },
+  "nodes": [
+    {
+      "id": "heir-canopy",
+      "type": "canopy",
+      "label": "HEIR Canopy",
+      "subtitle": "History • Enforcement • Integrity • Repair",
+      "position": { "x": 400, "y": 50 },
+      "style": {
+        "backgroundColor": "#2E8B57",
+        "textColor": "white",
+        "border": "3px solid #1C5A3A",
+        "shape": "trapezoid",
+        "width": 600,
+        "height": 80
+      },
+      "data": {
+        "doctrine": "HEIR",
+        "layer": "canopy"
+      }
+    },
+    {
+      "id": "star-center",
+      "type": "star", 
+      "label": "Project North Star",
+      "subtitle": "Vertical IMO at every node; ORBT discipline; CARB runtime; HEIR over all",
+      "position": { "x": 400, "y": 180 },
+      "style": {
+        "backgroundColor": "#FFD700",
+        "textColor": "black",
+        "shape": "star",
+        "size": "large",
+        "fontSize": 18
+      },
+      "data": {
+        "altitude": "30k",
+        "doctrine": "star"
+      }
+    },
+    {
+      "id": "branch-design",
+      "type": "branch",
+      "label": "Design & Doctrine",
+      "subtitle": "20k altitude",
+      "position": { "x": 200, "y": 300 },
+      "style": {
+        "backgroundColor": "#228B22",
+        "textColor": "white",
+        "shape": "rounded",
+        "width": 200,
+        "height": 60
+      },
+      "data": {
+        "altitude": "20k",
+        "icon": "📐"
+      }
+    },
+    {
+      "id": "branch-execution", 
+      "type": "branch",
+      "label": "Execution",
+      "subtitle": "20k altitude",
+      "position": { "x": 600, "y": 300 },
+      "style": {
+        "backgroundColor": "#228B22", 
+        "textColor": "white",
+        "shape": "rounded",
+        "width": 200,
+        "height": 60
+      },
+      "data": {
+        "altitude": "20k",
+        "icon": "⚙️"
+      }
+    },
+    {
+      "id": "node-blueprint-registry",
+      "type": "node",
+      "label": "Blueprint Registry",
+      "subtitle": "10k altitude",
+      "position": { "x": 200, "y": 450 },
+      "style": {
+        "backgroundColor": "#4169E1",
+        "textColor": "white", 
+        "shape": "rectangle",
+        "width": 250,
+        "height": 200,
+        "verticalLayout": true
+      },
+      "data": {
+        "altitude": "10k",
+        "doctrine": {
+          "imo": {
+            "input": ["Vision payload (40k→1k altitude JSON)", "Process constants & variables"],
+            "middle": {
+              "orchestrator": "Garage-MCP",
+              "tools": ["Zod validator", "Firebase Admin", "Neon Client"],
+              "operations": [
+                {
+                  "title": "Schema validate",
+                  "tool": "Zod validator",
+                  "computation": "CTB schema checks + doctrine ID attach"
+                }
+              ],
+              "promotion_gate": true,
+              "human_firebreak": true
+            },
+            "output": ["Approved blueprint version", "CTB render config"]
+          },
+          "orbt": {
+            "operate": ["Serve current blueprint to UI"],
+            "repair": ["Rollback to last-known good", "Flag invalid schema"],
+            "build": ["Add node types", "Doctrine upgrades"],
+            "train": ["Authoring guide", "Examples gallery"]
+          },
+          "carb": {
+            "compliance": ["STAMPED/SPVPET/STACKED alignment"],
+            "automation": ["Auto-publish diagram on merge"],
+            "repair": ["Mantis hooks", "BMAD traces"],
+            "blueprint": ["Altitude JSON kept in registry"]
+          }
+        },
+        "badges": ["DOCTRINE-LOCKED", "VALIDATED", "PROMOTION-GATE"]
+      }
+    },
+    {
+      "id": "node-imo-factory",
+      "type": "node", 
+      "label": "IMO Factory",
+      "subtitle": "10k altitude",
+      "position": { "x": 600, "y": 450 },
+      "style": {
+        "backgroundColor": "#4169E1",
+        "textColor": "white",
+        "shape": "rectangle", 
+        "width": 250,
+        "height": 200,
+        "verticalLayout": true
+      },
+      "data": {
+        "altitude": "10k",
+        "doctrine": {
+          "imo": {
+            "input": ["User inputs", "Repo metadata", "ENV secrets"],
+            "middle": {
+              "orchestrator": "Garage-MCP",
+              "tools": ["HEIR runner", "Git hooks", "Zod validator"],
+              "operations": [
+                {
+                  "title": "HEIR checks", 
+                  "tool": "HEIR runner",
+                  "computation": "trace IDs • enforcement gates • integrity checks"
+                }
+              ],
+              "promotion_gate": true,
+              "human_firebreak": true
+            },
+            "output": ["Validated artifact", "Promotion ticket"]
+          },
+          "orbt": {
+            "operate": ["Run validators", "Show live status"],
+            "repair": ["Auto-fix suggestions"],
+            "build": ["New validators", "UI modules"],
+            "train": ["Operator SOPs", "Playbook clips"]
+          },
+          "carb": {
+            "compliance": ["Promotion gates • doctrine checks"],
+            "automation": ["CI pipeline triggers"],
+            "repair": ["Auto-revert on regression"],
+            "blueprint": ["Artifact ties back to registry entry"]
+          }
+        },
+        "badges": ["BMAD-TRACE", "PERF-BASELINE", "HEIR-GATED"]
+      }
+    },
+    {
+      "id": "schema-foundation",
+      "type": "foundation",
+      "label": "Schema Grounding", 
+      "subtitle": "STAMPED • SPVPET • STACKED",
+      "position": { "x": 400, "y": 700 },
+      "style": {
+        "backgroundColor": "#8B4513",
+        "textColor": "white",
+        "shape": "trapezoid",
+        "width": 500,
+        "height": 80
+      },
+      "data": {
+        "schemas": {
+          "neon": {
+            "name": "STAMPED (Vault)",
+            "icon": "🗄️",
+            "sample_table": "shq.dpr_doctrine"
+          },
+          "firebase": {
+            "name": "SPVPET (Working Memory)",
+            "icon": "📝", 
+            "sample_collection": "agent_whiteboard"
+          },
+          "bigquery": {
+            "name": "STACKED (Analytics)",
+            "icon": "📊",
+            "sample_dataset": "ops_events"
+          }
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "heir-to-star",
+      "from": "heir-canopy",
+      "to": "star-center", 
+      "style": {
+        "strokeColor": "#2E8B57",
+        "strokeWidth": 3,
+        "strokeStyle": "dotted"
+      },
+      "label": "governs"
+    },
+    {
+      "id": "star-to-design",
+      "from": "star-center",
+      "to": "branch-design",
+      "style": {
+        "strokeColor": "#228B22",
+        "strokeWidth": 2,
+        "strokeStyle": "solid"
+      }
+    },
+    {
+      "id": "star-to-execution", 
+      "from": "star-center",
+      "to": "branch-execution",
+      "style": {
+        "strokeColor": "#228B22",
+        "strokeWidth": 2,
+        "strokeStyle": "solid"
+      }
+    },
+    {
+      "id": "design-to-registry",
+      "from": "branch-design",
+      "to": "node-blueprint-registry",
+      "style": {
+        "strokeColor": "#4169E1",
+        "strokeWidth": 2,
+        "strokeStyle": "solid"
+      }
+    },
+    {
+      "id": "execution-to-factory",
+      "from": "branch-execution", 
+      "to": "node-imo-factory",
+      "style": {
+        "strokeColor": "#4169E1",
+        "strokeWidth": 2,
+        "strokeStyle": "solid"
+      }
+    },
+    {
+      "id": "star-to-foundation",
+      "from": "star-center",
+      "to": "schema-foundation",
+      "style": {
+        "strokeColor": "#8B4513",
+        "strokeWidth": 2,
+        "strokeStyle": "solid"
+      },
+      "label": "grounded in"
+    }
+  ],
+  "rendering_hints": {
+    "imo_emphasis": {
+      "middle_section_scale": 1.15,
+      "middle_highlight": true,
+      "orchestrator_prominence": true
+    },
+    "color_coding": {
+      "heir": "#2E8B57",
+      "imo": "#4169E1", 
+      "orbt": "#9370DB",
+      "carb": "#DC143C",
+      "schemas": "#8B4513"
+    },
+    "layout_preferences": {
+      "vertical_imo_cards": true,
+      "branch_horizontal_alignment": true,
+      "schema_band_bottom": true
+    }
+  },
+  "export_options": {
+    "whimsical_compatible": true,
+    "notion_embeddable": true,
+    "figma_importable": true
+  }
+}

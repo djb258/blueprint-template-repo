@@ -2,218 +2,270 @@
 # Doctrine-locked visualization system with HEIR canopy
 
 meta:
-  version: "1.0.0"
-  created_at: "2025-08-26T00:00:00Z"
+  spec_version: "1.0.0"
   doctrine_lock: true
-  schema_enforcement: ["STAMPED", "SPVPET", "STACKED"]
-  
+  notes:
+    - "HEIR is the canopy over EVERYTHING."
+    - "IMO is a vertical planning mechanism at each node: Input → Middle → Output."
+    - "ORBT is the discipline lens at each node."
+    - "CARB is the runtime overlay at each node."
+    - "Schemas (STAMPED/SPVPET/STACKED) are the base/foundation."
+
 # HEIR Canopy - History • Enforcement • Integrity • Repair
-canopy:
-  heir:
-    history:
-      decisions: []
-      evolution: []
-      lessons_learned: []
-    enforcement:
-      policies: []
-      compliance_gates: []
-      violation_handlers: []
-    integrity:
-      validations: []
-      audit_trails: []
-      checksums: []
-    repair:
-      failure_modes: []
-      recovery_procedures: []
-      rollback_plans: []
+heir:
+  name: "HEIR Canopy"
+  acronym: "History • Enforcement • Integrity • Repair"
+  description: "Overarching compliance canopy. All nodes run under HEIR discipline."
+  render_hints:
+    style: "canopy_roof"
+    badge: "HEIR"
+    legend: true
 
-# Christmas Tree Structure
+# Christmas Tree Star
 star:
-  name: "Project North Star"
-  vision: ""
-  principles: ["HEIR", "IMO", "ORBT", "CARB"]
-
-# Main trunk with doctrine grounding
-trunk:
-  doctrine_foundation: ["HEIR", "IMO", "ORBT", "CARB"]
-  schema_grounding:
-    stamped: # Neon PostgreSQL
-      tables: []
-      relationships: []
-      constraints: []
-    spvpet: # Firebase
-      collections: []
-      rules: []
-      indexes: []
-    stacked: # BigQuery
-      datasets: []
-      views: []
-      jobs: []
-  telemetry:
-    emit_points: []
-    sinks: []
-    alerting: []
+  id: "STAR-000"
+  name: "IMO → Garage Orchestrator"
+  altitude: "30k"
+  tagline: "Vertical IMO at every node; ORBT discipline; CARB runtime; HEIR over all."
+  render_hints:
+    icon: "⭐"
+    emphasis: true
 
 # Branches with doctrine-locked nodes
 branches:
-  - name: "Strategic Vision"
-    altitude: "30000ft"
+  - id: "BR-DOCTRINE"
+    name: "Design & Doctrine"
+    altitude: "20k"
+    render_hints:
+      icon: "📐"
     nodes:
-      - label: "Vision Definition"
-        imo:
-          input: "Stakeholder requirements and market analysis"
+      - id: "DD-01"
+        label: "Blueprint Registry"
+        altitude: "10k"
+        orientation: "vertical"
+        IMO:
+          input:
+            - "Vision payload (40k→1k altitude JSON)"
+            - "Process constants & variables"
           middle:
-            tools: []
-            orchestrator: "vision_coordinator"
-            contracts: []
-            promotion_gates: []
-            failure_handling: []
-            observability: []
-          output: "Clear project vision and success criteria"
-        orbt:
-          operate: "Monitor vision alignment across all initiatives"
-          repair: "Realign when vision drift detected"
-          build: "Establish vision governance frameworks"
-          train: "Vision communication and stakeholder alignment"
-        carb:
-          compliance: []
-          automation: []
-          repair: []
-          blueprint: []
-        schema_mapping:
-          stamped: []
-          spvpet: []
-          stacked: []
+            orchestration:
+              orchestrator: "Garage-MCP"
+              subagents: ["Mantis", "Abacus"]
+              tools: ["Zod validator", "Firebase Admin", "Neon Client"]
+              playbook:
+                - "Schema validate CTB"
+                - "Version-lock blueprint"
+                - "Persist to registry/vault"
+            operations:
+              - title: "Schema validate"
+                tool: "Zod validator"
+                computation: "CTB schema checks + doctrine ID attach"
+              - title: "Version-lock"
+                tool: "Firebase (registry) + Neon (vault)"
+                computation: "Hash blueprint + write registry record"
+            contracts:
+              preconditions: ["env.secrets present"]
+              postconditions: ["version_hash persisted"]
+            promotion:
+              gate: true
+              rules: ["HEIR pass", "ORBT operate OK"]
+              destinations: ["Neon: shq.dpr_doctrine"]
+              human_firebreak: true
+            failure:
+              failure_modes: ["Schema drift"]
+              retries: 1
+              fallback_plan: ["Rollback to last-known good"]
+              incident_log: "Neon: shq.master_error_log"
+            observability:
+              metrics: ["duration_ms"]
+              logs: ["HEIR.audit"]
+              trace_fields: ["trace_id", "timestamp", "version_hash"]
+          output:
+            - "Approved blueprint version"
+            - "CTB render config"
+        ORBT:
+          operate: ["Serve current blueprint to UI"]
+          repair: ["Rollback to last-known good", "Flag invalid schema"]
+          build: ["Add node types", "Doctrine upgrades"]
+          train: ["Authoring guide", "Examples gallery"]
+        CARB:
+          compliance: ["STAMPED/SPVPET/STACKED alignment"]
+          automation: ["Auto-publish diagram on merge"]
+          repair: ["Mantis hooks", "BMAD traces"]
+          blueprint: ["Altitude JSON kept in registry"]
+        links:
+          repo: "https://github.com/your-org/blueprint-registry"
+          render_endpoint: "https://your-render.app/api/registry"
+          firebase_doc: "projects/project-pig/collections/blueprint_registry"
+        badges: ["DOCTRINE-LOCKED", "VALIDATED", "PROMOTION-GATE"]
 
-  - name: "System Architecture"
-    altitude: "20000ft"
+  - id: "BR-EXEC"
+    name: "Execution"
+    altitude: "20k"
+    render_hints:
+      icon: "⚙️"
     nodes:
-      - label: "Component Design"
-        imo:
-          input: "Technical requirements and constraints"
+      - id: "EX-01"
+        label: "IMO Factory"
+        altitude: "10k"
+        orientation: "vertical"
+        IMO:
+          input:
+            - "User inputs"
+            - "Repo metadata"
+            - "ENV secrets"
           middle:
-            tools: []
-            orchestrator: "architecture_coordinator"
-            contracts: []
-            promotion_gates: []
-            failure_handling: []
-            observability: []
-          output: "System architecture and component specifications"
-        orbt:
-          operate: "Monitor system health and performance"
-          repair: "Fix architectural issues and technical debt"
-          build: "Develop system components and integrations"
-          train: "Architecture documentation and team onboarding"
-        carb:
-          compliance: []
-          automation: []
-          repair: []
-          blueprint: []
-        schema_mapping:
-          stamped: []
-          spvpet: []
-          stacked: []
+            orchestration:
+              orchestrator: "Garage-MCP"
+              subagents: ["Mantis", "Abacus"]
+              tools: ["HEIR runner", "Git hooks", "Zod validator"]
+              playbook:
+                - "Resolve blueprint + env context"
+                - "Run HEIR checks (enforcement/integrity)"
+                - "Run atomic diff + perf baseline compare"
+                - "If pass → emit Promotion ticket"
+            operations:
+              - title: "HEIR checks"
+                tool: "HEIR runner"
+                computation: "trace IDs • enforcement gates • integrity checks"
+                inputs: ["repo@commit", "env.secrets"]
+                outputs: ["heir_pass:boolean", "trace_id"]
+              - title: "Atomic diff"
+                tool: "Git hooks"
+                computation: "3-file limit • perf baseline compare"
+                inputs: ["repo@commit", "baseline@prev"]
+                outputs: ["diff_report", "perf_delta"]
+            contracts:
+              preconditions:
+                - "env.secrets present"
+                - "blueprint version locked"
+                - "baseline available"
+              postconditions: ["trace_id logged", "validation report stored"]
+              io_contracts:
+                input_contract:
+                  - "repo@commit must be reachable"
+                  - "baseline must include perf metrics"
+                output_contract:
+                  - "promotion ticket includes trace_id + version_hash"
+            promotion:
+              gate: true
+              rules:
+                - "HEIR: Enforcement + Integrity pass"
+                - "ORBT: Operate within limits"
+                - "Performance regression < 10%"
+              destinations: ["Neon: shq.dpr_doctrine"]
+              human_firebreak: true
+            failure:
+              failure_modes:
+                - "Missing baseline"
+                - "Perf regression > 10%"
+                - "Schema drift"
+              retries: 1
+              fallback_plan:
+                - "Auto-revert to last-known good"
+                - "Open incident with Mantis"
+              incident_log: "Neon: shq.master_error_log"
+            observability:
+              metrics: ["duration_ms", "perf_delta", "pass_rate"]
+              logs: ["HEIR.audit", "BMAD.trace"]
+              trace_fields: ["trace_id", "timestamp", "version_hash"]
+            tempo_sla: "must complete < 2 min"
+          output:
+            - "Validated artifact"
+            - "Promotion ticket"
+        ORBT:
+          operate: ["Run validators", "Show live status"]
+          repair: ["Auto-fix suggestions"]
+          build: ["New validators", "UI modules"]
+          train: ["Operator SOPs", "Playbook clips"]
+        CARB:
+          compliance: ["Promotion gates • doctrine checks"]
+          automation: ["CI pipeline triggers"]
+          repair: ["Auto-revert on regression"]
+          blueprint: ["Artifact ties back to registry entry"]
+        links:
+          repo: "https://github.com/your-org/imo-factory"
+          render_endpoint: "https://your-render.app/api/validate"
+          neon_table: "shq.dpr_doctrine"
+        badges: ["BMAD-TRACE", "PERF-BASELINE", "HEIR-GATED"]
 
-  - name: "Implementation"
-    altitude: "10000ft"
-    nodes:
-      - label: "Feature Development"
-        imo:
-          input: "Feature specifications and acceptance criteria"
-          middle:
-            tools: []
-            orchestrator: "development_coordinator"
-            contracts: []
-            promotion_gates: []
-            failure_handling: []
-            observability: []
-          output: "Working features and functionality"
-        orbt:
-          operate: "Execute development workflows and deployments"
-          repair: "Fix bugs and resolve integration issues"
-          build: "Implement features according to specifications"
-          train: "Code reviews and technical skill development"
-        carb:
-          compliance: []
-          automation: []
-          repair: []
-          blueprint: []
-        schema_mapping:
-          stamped: []
-          spvpet: []
-          stacked: []
+# Schema Grounding - STAMPED/SPVPET/STACKED
+schemas:
+  neon:
+    name: "STAMPED (Vault)"
+    sample_tables:
+      - table: "shq.dpr_doctrine"
+        key_columns: ["section_number", "title", "version_hash", "created_at"]
+    render_hints:
+      icon: "🗄️"
+  firebase:
+    name: "SPVPET (Working Memory)"
+    sample_collections:
+      - collection: "agent_whiteboard"
+        key_fields:
+          - "agent_id"
+          - "process_id"
+          - "blueprint_id"
+          - "ttl"
+          - "validated"
+          - "timestamp_last_touched"
+    render_hints:
+      icon: "📝"
+  bigquery:
+    name: "STACKED (Analytics)"
+    sample_datasets:
+      - dataset: "ops_events"
+        key_fields: ["event_id", "trace_id", "ts", "severity", "context"]
+    render_hints:
+      icon: "📊"
 
-  - name: "Operations"
-    altitude: "5000ft"
-    nodes:
-      - label: "Runtime Management"
-        imo:
-          input: "Operational requirements and SLA targets"
-          middle:
-            tools: []
-            orchestrator: "operations_coordinator"
-            contracts: []
-            promotion_gates: []
-            failure_handling: []
-            observability: []
-          output: "Stable, monitored production environment"
-        orbt:
-          operate: "Maintain system uptime and performance"
-          repair: "Respond to incidents and outages"
-          build: "Enhance operational tooling and automation"
-          train: "Operational procedures and incident response"
-        carb:
-          compliance: []
-          automation: []
-          repair: []
-          blueprint: []
-        schema_mapping:
-          stamped: []
-          spvpet: []
-          stacked: []
+# Legend
+legend:
+  altitudes:
+    - label: "30k"
+      description: "Vision / Star"
+    - label: "20k"
+      description: "Categories / Branches"
+    - label: "10k"
+      description: "Systems / Nodes"
+    - label: "5k"
+      description: "Executable Steps (optional per node)"
+    - label: "1k"
+      description: "Implementation details (code/scripts)"
+  acronyms:
+    HEIR: "History • Enforcement • Integrity • Repair"
+    IMO: "Input • Middle • Output (vertical planning mechanism)"
+    ORBT: "Operate • Repair • Build • Train (discipline lens)"
+    CARB: "Compliance • Automation • Repair • Blueprint (runtime overlay)"
+    "STAMPED/SPVPET/STACKED": "Unified schema doctrine: Neon/Firebase/BigQuery"
 
-# Whimsical JSON compatibility layer
-whimsical_mapping:
-  diagram_type: "flowchart"
-  theme: "christmas_tree"
-  layout: "hierarchical"
-  nodes: []
-  edges: []
-  styling:
-    colors:
-      canopy: "#2E8B57"  # SeaGreen
-      star: "#FFD700"    # Gold
-      trunk: "#8B4513"   # SaddleBrown
-      branches: "#228B22" # ForestGreen
-      nodes: "#4169E1"   # RoyalBlue
+# Constraints
+constraints:
+  require_heir_canopy: true
+  require_vertical_imo: true
+  require_orbt_per_node: true
+  require_middle_operations: true
+  require_schemas_base: true
+  allow_carb_optional: true
 
-# Doctrine enforcement rules
-doctrine_enforcement:
-  heir_required: true
-  imo_structure_locked: true
-  orbt_discipline_required: true
-  carb_overlay_optional: true
-  schema_grounding_required: true
-  
-  validation_rules:
-    - rule: "All nodes must have IMO structure"
-      violation_action: "block_pr"
-    - rule: "ORBT discipline must be applied"
-      violation_action: "block_pr"
-    - rule: "Schema mapping must be present"
-      violation_action: "warn"
-    - rule: "HEIR canopy must be maintained"
-      violation_action: "block_pr"
+# Render hints
+render_hints:
+  layout: "ctb_tree"
+  imo_stack_style: "vertical_cards"
+  branch_alignment: "horizontal"
+  schema_band_position: "bottom_base"
+  colors:
+    heir: "emphasize"
+    imo: "neutral"
+    orbt: "accent"
+    carb: "muted"
+    schemas: "foundation"
+  emphasis:
+    middle_column_scale: 1.15
+    middle_highlight: true
 
-# CI/CD Integration
-ci_hooks:
-  pre_commit:
-    - "validate_ctb_schema"
-    - "enforce_doctrine_compliance"
-  pre_push:
-    - "validate_whimsical_compatibility"
-    - "check_schema_grounding"
-  pull_request:
-    - "doctrine_enforcement_check"
-    - "ctb_diagram_generation"
-    - "compliance_audit"
+# Telemetry
+telemetry:
+  trace_id: "TRACE-CTB-EXAMPLE-001"
+  version_hash: "abc123example"
+  timestamp_iso: "2025-08-26T09:00:00Z"

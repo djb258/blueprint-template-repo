@@ -43,23 +43,24 @@
     "setup": "npm install && npm run validate"
   },
   "dependencies": {
+    "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "next": "^14.0.0",
-    "yaml": "^2.3.4",
-    "zod": "^4.1.1"
+    "yaml": "^2.3.4"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.19.11",
-    "@types/js-yaml": "^4.0.5",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "js-yaml": "^4.1.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.0",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
-    "js-yaml": "^4.1.0",
-    "tailwindcss": "^3.3.0",
-    "postcss": "^8.4.31",
-    "autoprefixer": "^10.4.16"
+    "zod": "^4.1.3"
   },
   "engines": {
     "node": ">=18.0.0"
