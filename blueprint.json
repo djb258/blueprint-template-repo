@@ -4,36 +4,21 @@
   "created_by": "Project GPT",
   "status_flags": {
     "is_filled": false,
-    "is_validated": false,
+    "is_validated": true,
     "is_whimsical_ready": false
   },
   "meta": {
     "unique_id": "DB/HIVE/SUB/PROC-YYYYMMDD-HHMMSS-XXXX",
     "process_id": "IMO-{project_slug}-{increment}",
-    "blueprint_version_hash": "sha256:...",
-    "doctrine": ["BARTON", "ORBT", "HEIR", "STAMPED/SPVPET/STACKED"]
+    "blueprint_version_hash": "sha256:ece27b91122b8c1e",
+    "doctrine": [
+      "BARTON",
+      "ORBT",
+      "HEIR",
+      "STAMPED/SPVPET/STACKED"
+    ]
   },
   "altitudes": {
-    "30000": {
-      "project_name": "",
-      "objective": "",
-      "success_criteria": [],
-      "stakeholders": []
-    },
-    "20000": {
-      "components": [],
-      "roles": [],
-      "stages": [],
-      "inputs": [],
-      "outputs": []
-    },
-    "10000": {
-      "steps": [],
-      "apis_services": [],
-      "decision_points": [],
-      "llms": [],
-      "compliance": []
-    },
     "5000": {
       "documentation_plan": [],
       "agent_roles": {
@@ -48,10 +33,33 @@
         "location": "",
         "policy": ""
       }
+    },
+    "10000": {
+      "steps": [],
+      "apis_services": [],
+      "decision_points": [],
+      "llms": [],
+      "compliance": []
+    },
+    "20000": {
+      "components": [],
+      "roles": [],
+      "stages": [],
+      "inputs": [],
+      "outputs": []
+    },
+    "30000": {
+      "project_name": "",
+      "objective": "",
+      "success_criteria": [],
+      "stakeholders": []
     }
   },
   "trunk_root": {
-    "doctrine_foundation": ["BARTON", "ORBT"],
+    "doctrine_foundation": [
+      "BARTON",
+      "ORBT"
+    ],
     "schema_enforcement": [
       "STAMPED (Neon)",
       "SPVPET (Firebase)",
@@ -59,7 +67,10 @@
     ],
     "telemetry": {
       "emit_at_every_stage": true,
-      "sink": ["Sidecar → Neon", "Sidecar → Firebase"]
+      "sink": [
+        "Sidecar → Neon",
+        "Sidecar → Firebase"
+      ]
     }
   },
   "whimsical_outputs": {

@@ -1,0 +1,124 @@
+name: Doctrine Enforcement
+
+on:
+  pull_request:
+    paths:
+      - 'ctb_blueprint.yaml'
+      - '**.json'
+      - '**.ts'
+      - '**.tsx'
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  enforce-doctrine:
+    name: CTB Doctrine Enforcement
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate CTB Blueprint Schema
+        run: |
+          echo "🔍 Validating CTB Blueprint against doctrine..."
+          npm run doctrine:validate
+          
+      - name: Check HEIR Canopy Compliance
+        run: |
+          echo "🏛️ Checking HEIR canopy compliance..."
+          npm run doctrine:heir-check
+          
+      - name: Verify IMO Structure
+        run: |
+          echo "📊 Verifying vertical IMO structure..."
+          npm run doctrine:imo-check
+          
+      - name: Validate ORBT Discipline
+        run: |
+          echo "🔄 Validating ORBT discipline..."
+          npm run doctrine:orbt-check
+          
+      - name: Check Schema Grounding
+        run: |
+          echo "🗄️ Checking STAMPED/SPVPET/STACKED grounding..."
+          npm run doctrine:schema-check
+          
+      - name: Enforce Promotion Gates
+        run: |
+          echo "🚪 Enforcing promotion gates..."
+          npm run doctrine:gate-check
+          
+      - name: Generate Enforcement Report
+        if: always()
+        run: |
+          echo "📋 Generating enforcement report..."
+          npm run doctrine:report
+          
+      - name: Upload Enforcement Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: doctrine-enforcement-report
+          path: doctrine-enforcement-report.json
+          
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('doctrine-enforcement-report.json', 'utf8'));
+            
+            const status = report.pass ? '✅ **PASS**' : '❌ **BLOCKED**';
+            const emoji = report.pass ? '🎄' : '⚠️';
+            
+            let comment = `${emoji} **CTB Doctrine Enforcement Report**\n\n`;
+            comment += `Status: ${status}\n\n`;
+            comment += `### Enforcement Checks:\n`;
+            
+            const checks = [
+              { key: 'heir_canopy', label: 'HEIR Canopy' },
+              { key: 'vertical_imo', label: 'Vertical IMO' },
+              { key: 'orbt_discipline', label: 'ORBT Discipline' },
+              { key: 'schema_grounding', label: 'Schema Grounding' },
+              { key: 'promotion_gates', label: 'Promotion Gates' }
+            ];
+            
+            checks.forEach(check => {
+              const passed = report.enforcement[check.key];
+              const icon = passed ? '✅' : '❌';
+              comment += `- ${icon} ${check.label}\n`;
+            });
+            
+            if (report.violations && report.violations.length > 0) {
+              comment += `\n### Violations:\n`;
+              report.violations.forEach(v => {
+                comment += `- 🚫 ${v}\n`;
+              });
+            }
+            
+            comment += `\n---\n`;
+            comment += `Version Hash: \`${report.version_hash}\`\n`;
+            comment += `Generated: ${report.timestamp}`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+            
+            if (!report.pass) {
+              core.setFailed('Doctrine enforcement failed. PR blocked.');
+            }

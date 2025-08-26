@@ -17,20 +17,32 @@
     "url": "https://github.com/your-org/imo-blueprint-template.git"
   },
   "scripts": {
-    "install": "npm install --save-dev zod tsx typescript @types/node",
+    "install": "npm install --save-dev zod tsx typescript @types/node js-yaml @types/js-yaml",
     "validate": "tsx scripts/validate.ts blueprint.json",
     "check-completeness": "tsx scripts/validate.ts blueprint.json --completeness-only",
     "generate-example": "cp templates/examples/ecommerce-blueprint.json my-project-blueprint.json",
     "export-whimsical": "tsx scripts/export-whimsical.ts blueprint.json",
     "generate-ctb": "tsx scripts/ctb-builder.ts blueprint.json",
     "generate-ctb-with-agents": "tsx scripts/ctb-builder.ts blueprint.json ctb-output.json garage-mcp",
+    "doctrine:validate": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml",
+    "doctrine:render": "tsx scripts/ctb-doctrine-builder.ts render ctb_blueprint.yaml",
+    "doctrine:whimsical": "tsx scripts/ctb-doctrine-builder.ts whimsical ctb_blueprint.yaml",
+    "doctrine:enforce": "tsx scripts/ctb-doctrine-builder.ts enforce ctb_blueprint.yaml",
+    "doctrine:heir-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --heir-only",
+    "doctrine:imo-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --imo-only",
+    "doctrine:orbt-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --orbt-only",
+    "doctrine:schema-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --schema-only",
+    "doctrine:gate-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --gates-only",
+    "doctrine:report": "tsx scripts/ctb-doctrine-builder.ts enforce ctb_blueprint.yaml",
     "setup": "npm install && npm run validate"
   },
   "devDependencies": {
     "@types/node": "^20.19.11",
+    "@types/js-yaml": "^4.0.5",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
-    "zod": "^4.1.1"
+    "zod": "^4.1.1",
+    "js-yaml": "^4.1.0"
   },
   "engines": {
     "node": ">=18.0.0"

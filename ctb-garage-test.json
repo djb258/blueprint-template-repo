@@ -1,0 +1,180 @@
+{
+  "generated_from": "example-ecommerce.json",
+  "generated_at": "2025-08-24T21:46:56.418Z",
+  "mode": "garage-mcp",
+  "ctb_blueprint": {
+    "star": {
+      "name": "World-Class E-commerce Platform"
+    },
+    "branches": [
+      {
+        "name": "Strategic Vision",
+        "nodes": [
+          {
+            "label": "Project Objectives",
+            "IMO": {
+              "input": "Business requirements and stakeholder needs",
+              "middle": "Build a scalable, modern e-commerce platform that handles 100k+ concurrent users with AI-powered recommendations",
+              "output": "Clear success criteria and stakeholder alignment"
+            },
+            "ORBT": {
+              "operate": "Monitor project alignment with business objectives",
+              "repair": "Realign project scope when objectives drift",
+              "build": "Establish governance and decision-making frameworks",
+              "train": "Stakeholder communication and expectation management"
+            }
+          }
+        ]
+      },
+      {
+        "name": "System Architecture",
+        "nodes": [
+          {
+            "label": "System Components",
+            "IMO": {
+              "input": "Requirements and technical constraints",
+              "middle": "Architect: Next.js Frontend with Tailwind, Node.js API Server, PostgreSQL Database, Redis Cache Layer, Stripe Payment Processing",
+              "output": "Component specifications and interfaces"
+            },
+            "ORBT": {
+              "operate": "Monitor component performance and health",
+              "repair": "Debug and fix component integration issues",
+              "build": "Develop and deploy system components",
+              "train": "Component architecture documentation and onboarding"
+            }
+          },
+          {
+            "label": "Process Flow",
+            "IMO": {
+              "input": "Roles: Frontend Developer, Backend Developer, DevOps Engineer, QA Engineer",
+              "middle": "Stages: Planning & Design → Core Development → Integration Testing → Production Deployment",
+              "output": "Workflow and role definitions"
+            },
+            "ORBT": {
+              "operate": "Execute stage transitions and role handoffs",
+              "repair": "Resolve workflow bottlenecks and role conflicts",
+              "build": "Design process automation and tooling",
+              "train": "Role-specific training and process documentation"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Implementation",
+        "nodes": [
+          {
+            "label": "Implementation Steps",
+            "IMO": {
+              "input": "Technical specifications and requirements",
+              "middle": "Execute: Set up development environment, Create database schema, Build authentication system...",
+              "output": "Working features and functionality"
+            },
+            "ORBT": {
+              "operate": "Monitor implementation progress and quality",
+              "repair": "Fix bugs and technical debt",
+              "build": "Develop features according to specifications",
+              "train": "Code reviews and technical documentation"
+            }
+          },
+          {
+            "label": "APIs & Services",
+            "IMO": {
+              "input": "Service requirements and integration needs",
+              "middle": "Integrate: Stripe Payment API, SendGrid Email Service, AWS S3 Storage API",
+              "output": "Working API connections and service integrations"
+            },
+            "ORBT": {
+              "operate": "Monitor API health and service availability",
+              "repair": "Fix integration issues and service failures",
+              "build": "Implement API connections and service layers",
+              "train": "API documentation and service operation guides"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Tactical Execution",
+        "nodes": [
+          {
+            "label": "Agent Coordination",
+            "IMO": {
+              "input": "Task requirements and coordination needs",
+              "middle": "Coordinate between Claude, Project GPT, Whimsical GPT, Sidecar, and HEIR agents",
+              "output": "Coordinated task execution and handoffs"
+            },
+            "ORBT": {
+              "operate": "Orchestrate agent workflows and communications",
+              "repair": "Resolve agent conflicts and coordination issues",
+              "build": "Implement agent integration and communication protocols",
+              "train": "Agent operation guides and handoff procedures"
+            },
+            "orchestrator": "main_coordinator",
+            "sub_agent": "task_distributor"
+          },
+          {
+            "label": "Documentation & Handoffs",
+            "IMO": {
+              "input": "Knowledge and deliverable requirements",
+              "middle": "Document processes and execute clean handoffs",
+              "output": "Complete documentation and successful knowledge transfer"
+            },
+            "ORBT": {
+              "operate": "Maintain documentation currency and execute handoffs",
+              "repair": "Fix documentation gaps and handoff failures",
+              "build": "Create comprehensive documentation and handoff procedures",
+              "train": "Documentation standards and handoff protocols"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "render_result": {
+    "diagram": "```\n        ⭐ World-Class E-commerce Platform\n       /|\\\n      / | \\\n     /  |  \\\n    /   |   \\\n   /_   |   _\\\n      \\ | /\n       \\|/\n        |\n        ├─ 🌿 Strategic Vision\n        │   └─ 🔷 Project Objectives\n        │        📥 Input: Business requirements and stakeholder needs\n        │        ⚙️  Middle: Build a scalable, modern e-commerce platform that handles 100k+ concurrent users with AI-powered recommendations\n        │        📤 Output: Clear success criteria and stakeholder alignment\n        │        🔄 Operate: Monitor project alignment with business objectives\n        │        🔧 Repair: Realign project scope when objectives drift\n        │        🏗️  Build: Establish governance and decision-making frameworks\n        │        📚 Train: Stakeholder communication and expectation management\n        ├─ 🌿 System Architecture\n        │   ├─ 🔷 System Components\n        │   │    📥 Input: Requirements and technical constraints\n        │   │    ⚙️  Middle: Architect: Next.js Frontend with Tailwind, Node.js API Server, PostgreSQL Database, Redis Cache Layer, Stripe Payment Processing\n        │   │    📤 Output: Component specifications and interfaces\n        │   │    🔄 Operate: Monitor component performance and health\n        │   │    🔧 Repair: Debug and fix component integration issues\n        │   │    🏗️  Build: Develop and deploy system components\n        │   │    📚 Train: Component architecture documentation and onboarding\n        │   │ \n        │   └─ 🔷 Process Flow\n        │        📥 Input: Roles: Frontend Developer, Backend Developer, DevOps Engineer, QA Engineer\n        │        ⚙️  Middle: Stages: Planning & Design → Core Development → Integration Testing → Production Deployment\n        │        📤 Output: Workflow and role definitions\n        │        🔄 Operate: Execute stage transitions and role handoffs\n        │        🔧 Repair: Resolve workflow bottlenecks and role conflicts\n        │        🏗️  Build: Design process automation and tooling\n        │        📚 Train: Role-specific training and process documentation\n        ├─ 🌿 Implementation\n        │   ├─ 🔷 Implementation Steps\n        │   │    📥 Input: Technical specifications and requirements\n        │   │    ⚙️  Middle: Execute: Set up development environment, Create database schema, Build authentication system...\n        │   │    📤 Output: Working features and functionality\n        │   │    🔄 Operate: Monitor implementation progress and quality\n        │   │    🔧 Repair: Fix bugs and technical debt\n        │   │    🏗️  Build: Develop features according to specifications\n        │   │    📚 Train: Code reviews and technical documentation\n        │   │ \n        │   └─ 🔷 APIs & Services\n        │        📥 Input: Service requirements and integration needs\n        │        ⚙️  Middle: Integrate: Stripe Payment API, SendGrid Email Service, AWS S3 Storage API\n        │        📤 Output: Working API connections and service integrations\n        │        🔄 Operate: Monitor API health and service availability\n        │        🔧 Repair: Fix integration issues and service failures\n        │        🏗️  Build: Implement API connections and service layers\n        │        📚 Train: API documentation and service operation guides\n        └─ 🌿 Tactical Execution\n           ├─ 🔷 Agent Coordination\n           │    📥 Input: Task requirements and coordination needs\n           │    ⚙️  Middle: Coordinate between Claude, Project GPT, Whimsical GPT, Sidecar, and HEIR agents\n           │    📤 Output: Coordinated task execution and handoffs\n           │    🔄 Operate: Orchestrate agent workflows and communications\n           │    🔧 Repair: Resolve agent conflicts and coordination issues\n           │    🏗️  Build: Implement agent integration and communication protocols\n           │    📚 Train: Agent operation guides and handoff procedures\n           │    🎭 Orchestrator: main_coordinator\n           │    🤖 Sub-agent: task_distributor\n           │ \n           └─ 🔷 Documentation & Handoffs\n                📥 Input: Knowledge and deliverable requirements\n                ⚙️  Middle: Document processes and execute clean handoffs\n                📤 Output: Complete documentation and successful knowledge transfer\n                🔄 Operate: Maintain documentation currency and execute handoffs\n                🔧 Repair: Fix documentation gaps and handoff failures\n                🏗️  Build: Create comprehensive documentation and handoff procedures\n                📚 Train: Documentation standards and handoff protocols\n        |\n      [TRUNK]\n```",
+    "checklist": [
+      {
+        "branch": "Strategic Vision",
+        "node": "Project Objectives",
+        "train_doc": "Stakeholder communication and expectation management"
+      },
+      {
+        "branch": "System Architecture",
+        "node": "System Components",
+        "train_doc": "Component architecture documentation and onboarding"
+      },
+      {
+        "branch": "System Architecture",
+        "node": "Process Flow",
+        "train_doc": "Role-specific training and process documentation"
+      },
+      {
+        "branch": "Implementation",
+        "node": "Implementation Steps",
+        "train_doc": "Code reviews and technical documentation"
+      },
+      {
+        "branch": "Implementation",
+        "node": "APIs & Services",
+        "train_doc": "API documentation and service operation guides"
+      },
+      {
+        "branch": "Tactical Execution",
+        "node": "Agent Coordination",
+        "train_doc": "Agent operation guides and handoff procedures",
+        "orchestrator": "call_orchestrator(\"Tactical Execution.Agent Coordination\")",
+        "sub_agent": "call_sub_agent(\"Tactical Execution.Agent Coordination\")"
+      },
+      {
+        "branch": "Tactical Execution",
+        "node": "Documentation & Handoffs",
+        "train_doc": "Documentation standards and handoff protocols"
+      }
+    ],
+    "summary": {
+      "branches": 4,
+      "nodes": 7,
+      "sub_branches": 0,
+      "errors": []
+    }
+  }
+}
