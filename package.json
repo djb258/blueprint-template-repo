@@ -21,6 +21,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "validate:ctb": "tsx scripts/validate-ctb.ts",
+    "illustration:dev": "next dev -p 3000",
     "install": "npm install --save-dev zod tsx typescript @types/node js-yaml @types/js-yaml",
     "validate": "tsx scripts/validate.ts blueprint.json",
     "check-completeness": "tsx scripts/validate.ts blueprint.json --completeness-only",
