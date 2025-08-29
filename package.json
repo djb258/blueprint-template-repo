@@ -40,6 +40,9 @@
     "doctrine:schema-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --schema-only",
     "doctrine:gate-check": "tsx scripts/ctb-doctrine-builder.ts validate ctb_blueprint.yaml --gates-only",
     "doctrine:report": "tsx scripts/ctb-doctrine-builder.ts enforce ctb_blueprint.yaml",
+    "imo-creator:init": "tsx scripts/imo-creator-init.ts",
+    "imo-creator:update": "tsx scripts/implement-from-imo-creator.ts",
+    "imo-creator:validate": "tsx scripts/validate-imo-creator-integration.ts",
     "setup": "npm install && npm run validate"
   },
   "dependencies": {
