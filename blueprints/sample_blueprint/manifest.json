@@ -1,0 +1,41 @@
+{
+  "manifest_version": "1.0",
+  "generated_at": "2025-10-17T13:02:34.002811Z",
+  "source_blueprint": "blueprint.json",
+  "files": {
+    "01_altitude.json": {
+      "sha256": "2a05bca303157a034229131dc58a67a01ce85f69a0d6490e2ae6bee7d771ccf9",
+      "size_bytes": 1002,
+      "type": "application/json"
+    },
+    "02_imo.json": {
+      "sha256": "99d81bff892f0bd4dddd050b10d7fc990c43402a9181d4415ad679db1d8f0375",
+      "size_bytes": 730,
+      "type": "application/json"
+    },
+    "03_ctb.json": {
+      "sha256": "6bba911e704856f52137f34f1d88f35cfba55b7c121d8a64fc6607294e50e8a6",
+      "size_bytes": 1252,
+      "type": "application/json"
+    },
+    "04_stack.json": {
+      "sha256": "184b08996948a4f0f98bef2c988f9ed60d6ff0c1e60bad871423f24293694a6a",
+      "size_bytes": 886,
+      "type": "application/json"
+    },
+    "05_build_prompt.txt": {
+      "sha256": "108aefa522d574761d44b7e5cd8cc7c80970c58e9e2e66cbefb1ce3e2c477a96",
+      "size_bytes": 1440,
+      "type": "text/plain"
+    },
+    "06_ci_config.json": {
+      "sha256": "c2de7407e70a9c1b8c9dbdb10ae6aa61ee3c42631aaccc427f4fe3ab2f58d497",
+      "size_bytes": 1459,
+      "type": "application/json"
+    }
+  },
+  "summary": {
+    "total_files": 6,
+    "total_size_bytes": 6769
+  }
+}

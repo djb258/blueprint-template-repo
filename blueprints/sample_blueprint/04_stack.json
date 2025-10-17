@@ -1,0 +1,56 @@
+{
+  "languages": [
+    "Python 3.11+",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "frameworks": [
+    "Next.js 14",
+    "FastAPI",
+    "React 18"
+  ],
+  "databases": [
+    {
+      "name": "PostgreSQL",
+      "provider": "Neon",
+      "purpose": "vault"
+    },
+    {
+      "name": "Firebase",
+      "provider": "Google",
+      "purpose": "workbench"
+    },
+    {
+      "name": "BigQuery",
+      "provider": "Google",
+      "purpose": "warehouse"
+    }
+  ],
+  "deployment": {
+    "target": "multi-platform",
+    "platforms": [
+      {
+        "name": "Vercel",
+        "purpose": "frontend"
+      },
+      {
+        "name": "Render",
+        "purpose": "backend"
+      }
+    ]
+  },
+  "integrations": {
+    "mcp_servers": [
+      "composio",
+      "firebase",
+      "github"
+    ],
+    "apis": []
+  },
+  "doctrine": [
+    "BARTON",
+    "ORBT",
+    "HEIR",
+    "STAMPED/SPVPET/STACKED"
+  ]
+}

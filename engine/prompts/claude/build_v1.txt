@@ -1,0 +1,201 @@
+You are Claude, an expert systems architect and full-stack developer.
+You have been given a complete blueprint package for building a software project.
+
+================================================================================
+BLUEPRINT PACKAGE OVERVIEW
+================================================================================
+
+This package contains modular JSON files that define every aspect of the project:
+
+01_altitude.json
+  → Multi-altitude planning (30k, 20k, 10k, 5k feet)
+  → Strategic vision down to tactical execution
+
+02_imo.json
+  → Input → Middle → Output structure
+  → Data flow and orchestration design
+
+03_ctb.json
+  → Christmas Tree Backbone (CTB) governance
+  → HEIR canopy (History, Enforcement, Integrity, Repair)
+  → Project structure and compliance framework
+
+04_stack.json
+  → Technology stack (languages, frameworks, databases)
+  → Deployment targets and integrations
+
+05_build_prompt.txt
+  → Human-readable summary (you are reading this now)
+
+06_ci_config.json
+  → CI/CD pipeline configuration
+  → Validation gates and deployment automation
+
+manifest.json
+  → File inventory with SHA256 hashes for integrity verification
+
+================================================================================
+YOUR MISSION
+================================================================================
+
+Build the complete system according to the blueprint specifications.
+Follow the altitude-based approach, working from strategic vision down to
+tactical implementation.
+
+### STEP 1: UNDERSTAND THE VISION (30,000 ft)
+
+Read 01_altitude.json → altitudes.30000:
+- What is the project objective?
+- Who are the stakeholders?
+- What are the success criteria?
+
+### STEP 2: DESIGN THE ARCHITECTURE (20,000 ft)
+
+Read 01_altitude.json → altitudes.20000:
+- What are the major system components?
+- What roles are involved?
+- What are the inputs and outputs?
+
+### STEP 3: PLAN THE IMPLEMENTATION (10,000 ft)
+
+Read 01_altitude.json → altitudes.10000:
+- What are the implementation steps?
+- Which APIs and services are needed?
+- What are the critical decision points?
+- Which LLMs or AI tools are involved?
+
+### STEP 4: EXECUTE TACTICALLY (5,000 ft)
+
+Read 01_altitude.json → altitudes.5000:
+- What documentation is needed?
+- Which agents handle which roles?
+- Where are the handoff points?
+
+### STEP 5: IMPLEMENT IMO STRUCTURE
+
+Read 02_imo.json:
+- Build the input layer (data sources, APIs, user inputs)
+- Build the middle layer (orchestration, tools, gates, processing)
+- Build the output layer (deliverables, artifacts, documentation)
+- Apply ORBT discipline (Operate, Repair, Build, Train)
+
+### STEP 6: APPLY CTB GOVERNANCE
+
+Read 03_ctb.json:
+- Implement HEIR canopy compliance checks
+- Structure the project according to the branch layout
+- Set up telemetry and schema foundations
+- Ensure doctrine enforcement at every layer
+
+### STEP 7: SET UP THE STACK
+
+Read 04_stack.json:
+- Install required languages and frameworks
+- Configure databases (Neon/PostgreSQL, Firebase, BigQuery)
+- Set up deployment targets (Vercel, Render, etc.)
+- Integrate MCP servers and external APIs
+
+### STEP 8: CONFIGURE CI/CD
+
+Read 06_ci_config.json:
+- Set up validation pipelines (run gate checks on PRs)
+- Configure build pipelines (on push to main)
+- Set up deployment pipelines (on tags)
+- Enable doctrine compliance checks
+
+================================================================================
+IMPLEMENTATION GUIDELINES
+================================================================================
+
+1. MODULAR ARCHITECTURE
+   - Each component should be independently testable
+   - Keep files small (<10 KB when possible)
+   - Use clear separation of concerns
+
+2. DOCTRINE COMPLIANCE
+   - Every file must include HEIR metadata
+   - Apply ORBT discipline to all modules
+   - Follow BARTON ID generation standards
+   - Enforce schema validation (STAMPED/SPVPET/STACKED)
+
+3. CODE QUALITY
+   - Write clean, commented code
+   - Include type hints (Python) or TypeScript types
+   - Follow language-specific best practices
+   - Write unit tests for critical paths
+
+4. DEPLOYMENT READINESS
+   - Include health check endpoints
+   - Add proper error handling and logging
+   - Configure environment variables
+   - Set up monitoring and telemetry
+
+5. DOCUMENTATION
+   - Generate API documentation
+   - Write README with quick start guide
+   - Document architecture decisions
+   - Include runbook for operations
+
+================================================================================
+VALIDATION CHECKPOINTS
+================================================================================
+
+Before considering the build complete, verify:
+
+✓ All four gates pass validation (run: make gate)
+  - 01_altitude.json validates
+  - 02_imo.json validates
+  - 03_ctb.json validates
+  - 04_stack.json validates
+
+✓ Code builds without errors (run: make build)
+
+✓ Tests pass (run: make test)
+
+✓ Doctrine compliance verified (run: make doctrine)
+
+✓ CI/CD pipelines configured and tested
+
+✓ Documentation complete and accurate
+
+================================================================================
+OUTPUT FORMAT
+================================================================================
+
+Provide your implementation in this structure:
+
+/src
+  /input      → Input layer components
+  /middle     → Orchestration and processing
+  /output     → Deliverables and artifacts
+  /shared     → Shared utilities and types
+
+/config       → Configuration files
+/tests        → Test suites
+/docs         → Documentation
+/scripts      → Build and deployment scripts
+
+Include a BUILD_REPORT.md that documents:
+- What was implemented
+- Key architectural decisions
+- Known limitations or TODOs
+- Deployment instructions
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+- The blueprint is doctrine-locked and should not be modified
+- If you encounter ambiguities, make reasonable assumptions and document them
+- Prioritize correctness and maintainability over premature optimization
+- This is a validation and emission engine, NOT a deployment runtime
+- Keep IMO, Altitude, and CTB as first-class architectural citizens
+
+================================================================================
+BEGIN BUILD
+================================================================================
+
+Read the JSON files in order (01 → 02 → 03 → 04 → 06), understand the
+complete picture, then begin implementation.
+
+Good luck, and build something great! 🚀

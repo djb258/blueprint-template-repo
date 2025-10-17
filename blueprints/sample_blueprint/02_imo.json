@@ -1,0 +1,40 @@
+{
+  "input": {
+    "data_sources": [],
+    "external_apis": [],
+    "user_inputs": [],
+    "config_files": []
+  },
+  "middle": {
+    "orchestration": {
+      "tools": [],
+      "gates": [
+        "gate_01",
+        "gate_02",
+        "gate_03",
+        "gate_04"
+      ],
+      "orchestrators": [],
+      "decision_points": []
+    },
+    "processing": {
+      "llms": [],
+      "transformations": [],
+      "validations": []
+    }
+  },
+  "output": {
+    "deliverables": [],
+    "artifacts": [],
+    "documentation": [],
+    "deployments": []
+  },
+  "doctrine": {
+    "orbt": {
+      "operate": "How to run the system",
+      "repair": "How to fix issues",
+      "build": "How to enhance",
+      "train": "How to learn"
+    }
+  }
+}

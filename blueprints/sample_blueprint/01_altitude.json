@@ -1,0 +1,50 @@
+{
+  "altitudes": {
+    "30000": {
+      "project_name": "",
+      "objective": "",
+      "success_criteria": [],
+      "stakeholders": []
+    },
+    "20000": {
+      "components": [],
+      "roles": [],
+      "stages": [],
+      "inputs": [],
+      "outputs": []
+    },
+    "10000": {
+      "steps": [],
+      "apis_services": [],
+      "decision_points": [],
+      "llms": [],
+      "compliance": []
+    },
+    "5000": {
+      "documentation_plan": [],
+      "agent_roles": {
+        "claude": "",
+        "project_gpt": "",
+        "whimsical_gpt": "",
+        "sidecar": "",
+        "heir": ""
+      },
+      "handoffs": [],
+      "firebreak_queue": {
+        "location": "",
+        "policy": ""
+      }
+    }
+  },
+  "meta": {
+    "unique_id": "DB/HIVE/SUB/PROC-YYYYMMDD-HHMMSS-XXXX",
+    "process_id": "IMO-{project_slug}-{increment}",
+    "blueprint_version_hash": "sha256:ece27b91122b8c1e",
+    "doctrine": [
+      "BARTON",
+      "ORBT",
+      "HEIR",
+      "STAMPED/SPVPET/STACKED"
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "doctrine_checks": {
+    "enabled": true,
+    "gates": [
+      "01_altitude",
+      "02_imo",
+      "03_ctb",
+      "04_stack"
+    ],
+    "on_failure": "block_merge"
+  },
+  "pipelines": {
+    "validate": {
+      "trigger": "on_pull_request",
+      "steps": [
+        {
+          "name": "Run gate validation",
+          "command": "make gate"
+        },
+        {
+          "name": "Check doctrine compliance",
+          "command": "python tools/repo_compliance_check.py"
+        }
+      ]
+    },
+    "build": {
+      "trigger": "on_push_to_main",
+      "steps": [
+        {
+          "name": "Install dependencies",
+          "command": "npm install && pip install -r requirements.txt"
+        },
+        {
+          "name": "Build artifacts",
+          "command": "make build"
+        },
+        {
+          "name": "Run tests",
+          "command": "make test"
+        }
+      ]
+    },
+    "deploy": {
+      "trigger": "on_tag",
+      "steps": [
+        {
+          "name": "Deploy frontend",
+          "platform": "vercel"
+        },
+        {
+          "name": "Deploy backend",
+          "platform": "render"
+        }
+      ]
+    }
+  },
+  "notifications": {
+    "on_failure": [
+      "github_status"
+    ],
+    "on_success": [
+      "github_status"
+    ]
+  },
+  "meta": {
+    "blueprint_version": "sha256:ece27b91122b8c1e",
+    "doctrine": [
+      "BARTON",
+      "ORBT",
+      "HEIR",
+      "STAMPED/SPVPET/STACKED"
+    ]
+  }
+}

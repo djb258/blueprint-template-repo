@@ -1,0 +1,58 @@
+{
+  "heir_canopy": {
+    "history": "Audit trail and lineage tracking",
+    "enforcement": "Doctrine compliance checks",
+    "integrity": "Data validation and verification",
+    "repair": "Self-healing and recovery mechanisms"
+  },
+  "star": {
+    "project_name": "your-project-name",
+    "unique_id": "DB/HIVE/SUB/PROC-YYYYMMDD-HHMMSS-XXXX",
+    "blueprint_version": "sha256:ece27b91122b8c1e"
+  },
+  "branches": [
+    {
+      "name": "doctrine",
+      "category": "governance",
+      "nodes": [
+        {
+          "id": "doctrine-001",
+          "label": "HEIR Compliance",
+          "type": "validation"
+        },
+        {
+          "id": "doctrine-002",
+          "label": "ORBT Discipline",
+          "type": "process"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "category": "data_ingestion",
+      "nodes": []
+    },
+    {
+      "name": "middle",
+      "category": "orchestration",
+      "nodes": []
+    },
+    {
+      "name": "output",
+      "category": "delivery",
+      "nodes": []
+    }
+  ],
+  "schema_foundation": [
+    "STAMPED (Neon)",
+    "SPVPET (Firebase)",
+    "STACKED (BigQuery)"
+  ],
+  "telemetry": {
+    "emit_at_every_stage": true,
+    "sink": [
+      "Sidecar → Neon",
+      "Sidecar → Firebase"
+    ]
+  }
+}
