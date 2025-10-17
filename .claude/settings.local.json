@@ -1,20 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install)",
-      "Bash(tsx scripts/ctb-builder.ts:*)",
-      "Bash(tsx:*)",
-      "Bash(npm run validate:*)",
-      "Bash(git add:*)",
-      "Bash(git push:*)",
-      "Bash(git fetch:*)",
-      "Bash(git commit:*)",
-      "WebFetch(domain:github.com)",
-      "WebFetch(domain:api.github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(git pull:*)"
+      "Bash(for:*)",
+      "Bash(do [ -f \"$file\" ])"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "additionalDirectories": [
+      "C:\\Users\\CUSTOM PC\\Desktop\\Cursor Builds\\scraping-tool"
+    ]
   }
 }
